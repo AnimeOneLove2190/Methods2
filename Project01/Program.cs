@@ -93,6 +93,12 @@ namespace Project01
             MathService serviceNine = new MathService();
             string resultSeven = serviceNine.Swap(ref inputNumberOne, ref inputNumberTwo);
             Console.WriteLine(result);
+            //Quest11
+            int numOne = int.Parse(Console.ReadLine());
+            int numTwo = int.Parse(Console.ReadLine());
+            MathService serviceMaxNumOfTwo = new MathService();
+            int numMax = serviceMaxNumOfTwo.GetMaxNumberOfTwo(numOne, numTwo);
+            Console.WriteLine(numMax);
         }
     }
 }

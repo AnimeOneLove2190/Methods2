@@ -58,5 +58,17 @@ namespace Project01
             string result = $"{numberOne} {numberTwo}";
             return result;
         }
+        //Quest11
+        public int GetMaxNumberOfTwo(int numOne, int numTwo)
+        {
+            if (numOne >= numTwo)
+            {
+                int numMin = numTwo;
+                numTwo = numOne;
+                numOne = numMin;
+            }
+            int numMax = numTwo;
+            return numMax;
+        }
     }
 }
