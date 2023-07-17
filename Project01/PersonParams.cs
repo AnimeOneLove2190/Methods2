@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TemporaryWhatIsThisGameDude
+namespace Project01
 {
     class PersonParams
     {
@@ -11,4 +11,3 @@ namespace TemporaryWhatIsThisGameDude
         public int height;
     }
 }
-

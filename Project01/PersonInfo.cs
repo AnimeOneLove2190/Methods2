@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TemporaryWhatIsThisGameDude
+namespace Project01
 {
     class PersonInfo
     {

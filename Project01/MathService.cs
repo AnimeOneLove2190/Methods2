@@ -70,5 +70,17 @@ namespace Project01
             int numMax = numTwo;
             return numMax;
         }
+        //Quest13
+        public int GetMinNumberOfTwo(int numOne, int numTwo)
+        {
+            if (numOne <= numTwo)
+            {
+                int numMax = numTwo;
+                numTwo = numOne;
+                numOne = numMax;
+            }
+            int numMin = numTwo;
+            return numMin;
+        }
     }
 }

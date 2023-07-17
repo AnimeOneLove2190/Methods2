@@ -4,9 +4,12 @@ using System.Text;
 
 namespace TemporaryWhatIsThisGameDude
 {
-    class PersonInfo
+    class PersonFullInfo
     {
         public string name;
         public string floor;
+        public int age;
+        public int weight;
+        public int height;
     }
 }
