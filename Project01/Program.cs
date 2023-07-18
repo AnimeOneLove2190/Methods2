@@ -117,29 +117,35 @@ namespace Project01
             PersonInfo asunaInfo = new PersonInfo();
             asunaInfo.name = "Yuuki Asuna";
             asunaInfo.floor = "Female";
-            PersonParams misatoParams = new PersonParams();
-            misatoParams.age = 29;
-            misatoParams.weight = 47;
-            misatoParams.height = 163;
-            PersonParams asunaParams = new PersonParams();
-            asunaParams.age = 19;
-            asunaParams.weight = 54;
-            asunaParams.height = 168;
+            PersonParams misatoParamsOne = new PersonParams();
+            misatoParamsOne.age = 29;
+            misatoParamsOne.weight = 47;
+            misatoParamsOne.height = 163;
+            PersonParams asunaParamsOne = new PersonParams();
+            asunaParamsOne.age = 19;
+            asunaParamsOne.weight = 54;
+            asunaParamsOne.height = 168;
             PersonFullInfo personFullInfoMisato = new PersonFullInfo();
             PersonService personServiceSetInfo = new PersonService();
-            personFullInfoMisato = personServiceSetInfo.SetPersonFullInfo(misatoInfo.name, misatoInfo.floor, misatoParams.age, misatoParams.weight, misatoParams.height, personFullInfoMisato);
-            Console.WriteLine(personFullInfoMisato.name);
-            Console.WriteLine(personFullInfoMisato.floor);
-            Console.WriteLine(personFullInfoMisato.age);
-            Console.WriteLine(personFullInfoMisato.weight);
-            Console.WriteLine(personFullInfoMisato.height);
+            personFullInfoMisato = personServiceSetInfo.SetPersonFullInfo(misatoInfo.name, misatoInfo.floor, misatoParamsOne.age, misatoParamsOne.weight, misatoParamsOne.height, personFullInfoMisato);
+            PersonService writeService = new PersonService();
+            writeService.WritePerson(personFullInfoMisato);
             PersonFullInfo personFullInfoAsuna = new PersonFullInfo();
-            personFullInfoAsuna = personServiceSetInfo.SetPersonFullInfo(asunaInfo.name, asunaInfo.floor, asunaParams.age, asunaParams.weight, asunaParams.height, personFullInfoAsuna);
-            Console.WriteLine(personFullInfoAsuna.name);
-            Console.WriteLine(personFullInfoAsuna.floor);
-            Console.WriteLine(personFullInfoAsuna.age);
-            Console.WriteLine(personFullInfoAsuna.weight);
-            Console.WriteLine(personFullInfoAsuna.height);
+            personFullInfoAsuna = personServiceSetInfo.SetPersonFullInfo(asunaInfo.name, asunaInfo.floor, asunaParamsOne.age, asunaParamsOne.weight, asunaParamsOne.height, personFullInfoAsuna);
+            writeService.WritePerson(personFullInfoAsuna);
+            //Quest17
+            PersonParams misatoParamsTwo = new PersonParams();
+            misatoParamsTwo.age = 29;
+            misatoParamsTwo.weight = 47;
+            misatoParamsTwo.height = 163;
+            PersonParams asunaParamsTwo = new PersonParams();
+            asunaParamsTwo.age = 19;
+            asunaParamsTwo.weight = 54;
+            asunaParamsTwo.height = 168;
+            PersonService checkMaxAge = new PersonService();
+            PersonParams personWithMaxAge = checkMaxAge.CheckMaxAge(misatoParamsTwo, asunaParamsTwo);
+            PersonService wrritePersonWithMaxAge = new PersonService();
+            wrritePersonWithMaxAge.WriteParams(personWithMaxAge);
         }
     }
 }

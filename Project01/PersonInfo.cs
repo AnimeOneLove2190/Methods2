@@ -6,6 +6,7 @@ namespace Project01
 {
     class PersonInfo
     {
+        //Quest16
         public string name;
         public string floor;
     }
