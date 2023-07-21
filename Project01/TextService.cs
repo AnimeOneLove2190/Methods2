@@ -30,26 +30,15 @@ namespace Project01
             return connectedTextFile;
         }
         //Quest20
-        public void DeletedTextFile(TextFile personOne)
+        public void ClearTextFile(TextFile personOne)
         {
-            TextFile deleteTextFile = new TextFile
-            {
-                name = personOne.name,
-                description = "Description deleted",
-                weight = 0
-            };
-            Console.WriteLine(deleteTextFile.name);
-            Console.WriteLine(deleteTextFile.description);
-            Console.WriteLine(deleteTextFile.weight);
+            personOne.description = "Description deleted";
+            personOne.weight = 0;
         }
         //Quest21
         public void AddedTextFile(TextFile person, string meow)
         {
-            TextFile addedTextFile = new TextFile
-            {
-                description = $"{person.description} {meow}"
-            };
-            Console.WriteLine(addedTextFile.description);
+            person.description = $"{person.description} {meow}";
         }
     }
 }

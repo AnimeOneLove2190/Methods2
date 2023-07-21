@@ -7,16 +7,15 @@ namespace Project01
     class PersonService
     {
         //Quest16
-        public PersonFullInfo SetPersonFullInfo(string name, string floor, int age, int weight, int height, PersonFullInfo personFullInfo)
+        public PersonFullInfo GetPersonFullInfo(PersonInfo waifuInfo, PersonParams waifuParams)
         {
             PersonFullInfo personFullInfoSer = new PersonFullInfo();
-            personFullInfoSer.name = name;
-            personFullInfoSer.floor = floor;
-            personFullInfoSer.age = age;
-            personFullInfoSer.weight = weight;
-            personFullInfoSer.height = height;
-            personFullInfo = personFullInfoSer;
-            return personFullInfo;
+            personFullInfoSer.name = waifuInfo.name;
+            personFullInfoSer.floor = waifuInfo.floor;
+            personFullInfoSer.age = waifuParams.age;
+            personFullInfoSer.weight = waifuParams.weight;
+            personFullInfoSer.height = waifuParams.height;
+            return personFullInfoSer;
         }
         public void WritePerson(PersonFullInfo personFullInfo)
         {
@@ -29,20 +28,11 @@ namespace Project01
         //Quest17
         public PersonParams CheckMaxAge(PersonParams waifuOne, PersonParams waifuTwo)
         {
-            PersonParams maxAgePersonS = new PersonParams();
             if (waifuOne.age > waifuTwo.age)
             {
-                maxAgePersonS = waifuOne;
+                return waifuOne;
             }
-            if (waifuOne.age < waifuTwo.age)
-            {
-                maxAgePersonS = waifuTwo;
-            }
-            if (waifuOne.age == waifuTwo.age)
-            {
-                Console.WriteLine("У них одинаковые возраста, я хз чо делать");
-            }
-            return maxAgePersonS;
+            return waifuTwo;
         }
         public void WriteParams(PersonParams waifuWithMaxAge)
         {

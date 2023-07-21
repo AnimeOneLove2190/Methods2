@@ -6,14 +6,16 @@ namespace Project01
     {
         static void Main(string[] args)
         {
+            TextService textService = new TextService();
+            MathService mathService = new MathService();
+            CalendarService calendarService = new CalendarService();
+            PersonService waifuService = new PersonService();
             //Quest01
-            TextService service = new TextService();
             string inputNameOne = Console.ReadLine();
-            string resultOne = service.GetGreetings(inputNameOne);
+            string resultOne = textService.GetGreetings(inputNameOne);
             Console.WriteLine(resultOne);
             //Quest02
-            MathService serviceOne = new MathService();
-            bool result = serviceOne.IsInsideInterval(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));
+            bool result = mathService.IsInsideInterval(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));
             Console.WriteLine(result);
             //Quest03
             Point pointOne = new Point();
@@ -25,90 +27,75 @@ namespace Project01
             int CatheusX = 0;
             int CatheusY = 0;
             if (pointOne.x > pointTwo.x)
-            {
-                MathService serviceCat = new MathService();
-                int resultBl = serviceCat.GetCathetus(pointTwo.y, pointOne.x);
+            {;
+                int resultBl = mathService.GetCathetus(pointTwo.y, pointOne.x);
                 CatheusX = resultBl;
             }
             if (pointOne.x < pointTwo.x)
             {
-                MathService serviceCat = new MathService();
-                int resultBl = serviceCat.GetCathetus(pointOne.x, pointTwo.y);
+                int resultBl = mathService.GetCathetus(pointOne.x, pointTwo.y);
                 CatheusX = resultBl;
             }
             if (pointOne.y > pointTwo.y)
             {
-                MathService serviceCat = new MathService();
-                int resultBl = serviceCat.GetCathetus(pointTwo.y, pointOne.x);
+                int resultBl = mathService.GetCathetus(pointTwo.y, pointOne.x);
                 CatheusY = resultBl;
             }
             if (pointOne.y < pointTwo.y)
             {
-                MathService serviceCat = new MathService();
-                int resultBl = serviceCat.GetCathetus(pointOne.x, pointTwo.y);
+                int resultBl = mathService.GetCathetus(pointOne.x, pointTwo.y);
                 CatheusY = resultBl;
             }
-            MathService serviceHyp = new MathService();
-            double Hypotenuse = serviceHyp.GetHypotenuse(CatheusX, CatheusY);
+            double Hypotenuse = mathService.GetHypotenuse(CatheusX, CatheusY);
             Console.WriteLine(Hypotenuse);
             //Quest04
             int numberOne = int.Parse(Console.ReadLine());
-            MathService serviceThree = new MathService();
-            bool resultThree = serviceThree.IsEven(numberOne);
+            bool resultThree = mathService.IsEven(numberOne);
             Console.WriteLine(resultThree);
             //Quest05
             double inputC = double.Parse(Console.ReadLine());
-            MathService serviceFour = new MathService();
-            double outputF = serviceFour.GetDegrees(inputC);
+            double outputF = mathService.GetDegrees(inputC);
             Console.WriteLine(outputF);
             //Quest06
             string inputCity = Console.ReadLine();
             string inputStreet = Console.ReadLine();
             string inputHouse = Console.ReadLine();
             string inputApart = Console.ReadLine();
-            TextService serviceFive = new TextService();
-            string output = serviceFive.GetAddress(inputCity, inputStreet, inputHouse, inputApart);
+            string output = textService.GetAddress(inputCity, inputStreet, inputHouse, inputApart);
             Console.WriteLine(output);
             //Quest07
             int inputWidth = int.Parse(Console.ReadLine());
             int inputLength = int.Parse(Console.ReadLine());
-            MathService serviceSix = new MathService();
-            int resultFour = serviceSix.GetArea(inputLength, inputWidth);
+            int resultFour = mathService.GetArea(inputLength, inputWidth);
             Console.WriteLine(resultFour);
             //Quest08
             int inputWidthOne = int.Parse(Console.ReadLine());
             int inputLengthOne = int.Parse(Console.ReadLine());
             int inputHeight = int.Parse(Console.ReadLine());
-            MathService serviceSeven = new MathService();
-            int resultFive = serviceSeven.GetCapacity(inputLengthOne, inputWidthOne, inputHeight);
+            int resultFive = mathService.GetCapacity(inputLengthOne, inputWidthOne, inputHeight);
             Console.WriteLine(resultFive);
             //Quest09
             int inputMinutes = int.Parse(Console.ReadLine());
-            CalendarService serviceEight = new CalendarService();
-            int resultSix = serviceEight.GetHoursInMinutes(inputMinutes);
+            int resultSix = calendarService.GetHoursInMinutes(inputMinutes);
             Console.WriteLine(resultSix);
             //Quest10
             int inputNumberOne = int.Parse(Console.ReadLine());
             int inputNumberTwo = int.Parse(Console.ReadLine());
-            MathService serviceNine = new MathService();
-            string resultSeven = serviceNine.Swap(ref inputNumberOne, ref inputNumberTwo);
+            mathService.Swap(ref inputNumberOne, ref inputNumberTwo);
             Console.WriteLine(result);
             //Quest11
             int numOne = int.Parse(Console.ReadLine());
             int numTwo = int.Parse(Console.ReadLine());
-            MathService serviceMaxNumOfTwo = new MathService();
-            int numMax = serviceMaxNumOfTwo.GetMaxNumberOfTwo(numOne, numTwo);
+            int numMax = mathService.GetMaxNumberOfTwo(numOne, numTwo);
             Console.WriteLine(numMax);
             //Quest13
             int inputMinNumOne = int.Parse(Console.ReadLine());
             int inputMinNumTwo = int.Parse(Console.ReadLine());
-            MathService serviceMinNumOfTwo = new MathService();
-            int numMin = serviceMinNumOfTwo.GetMaxNumberOfTwo(inputMinNumOne, inputMinNumTwo);
+            int numMin = mathService.GetMaxNumberOfTwo(inputMinNumOne, inputMinNumTwo);
             Console.WriteLine(numMin);
             //Quest15
             int numOfMonth = int.Parse(Console.ReadLine());
-            CalendarService serviceNameOfSeason = new CalendarService();
-            string nameOfSeason = serviceNameOfSeason.GetSeason(numOfMonth);
+            string nameOfSeason = calendarService.GetSeason(numOfMonth);
             Console.WriteLine(nameOfSeason);
             //Quest16
             PersonInfo misatoInfo = new PersonInfo();
@@ -125,13 +112,10 @@ namespace Project01
             asunaParamsOne.age = 19;
             asunaParamsOne.weight = 54;
             asunaParamsOne.height = 168;
-            PersonFullInfo personFullInfoMisato = new PersonFullInfo();
-            PersonService personServiceSetInfo = new PersonService();
-            personFullInfoMisato = personServiceSetInfo.SetPersonFullInfo(misatoInfo.name, misatoInfo.floor, misatoParamsOne.age, misatoParamsOne.weight, misatoParamsOne.height, personFullInfoMisato);
+            PersonFullInfo personFullInfoMisato = waifuService.GetPersonFullInfo(misatoInfo, misatoParamsOne);
             PersonService writeService = new PersonService();
             writeService.WritePerson(personFullInfoMisato);
-            PersonFullInfo personFullInfoAsuna = new PersonFullInfo();
-            personFullInfoAsuna = personServiceSetInfo.SetPersonFullInfo(asunaInfo.name, asunaInfo.floor, asunaParamsOne.age, asunaParamsOne.weight, asunaParamsOne.height, personFullInfoAsuna);
+            PersonFullInfo personFullInfoAsuna = waifuService.GetPersonFullInfo(asunaInfo, asunaParamsOne);
             writeService.WritePerson(personFullInfoAsuna);
             //Quest17
             PersonParams misatoParamsTwo = new PersonParams();
@@ -142,16 +126,14 @@ namespace Project01
             asunaParamsTwo.age = 19;
             asunaParamsTwo.weight = 54;
             asunaParamsTwo.height = 168;
-            PersonService checkMaxAge = new PersonService();
-            PersonParams personWithMaxAge = checkMaxAge.CheckMaxAge(misatoParamsTwo, asunaParamsTwo);
+            PersonParams personWithMaxAge = waifuService.CheckMaxAge(misatoParamsTwo, asunaParamsTwo);
             PersonService wrritePersonWithMaxAge = new PersonService();
             wrritePersonWithMaxAge.WriteParams(personWithMaxAge);
             //Quest18
             int inputNumOne = int.Parse(Console.ReadLine());
             int inputNumTwo = int.Parse(Console.ReadLine());
             int inputOperation = int.Parse(Console.ReadLine());
-            MathService performOperation = new MathService();
-            int resultYopta = performOperation.PerformOperation(inputNumOne, inputNumTwo, (Operation)inputOperation);
+            int resultYopta = mathService.PerformOperation(inputNumOne, inputNumTwo, (Operation)inputOperation);
             Console.WriteLine(resultYopta);
             //Quest19
             TextFile misatoFile = new TextFile
@@ -166,18 +148,21 @@ namespace Project01
                 description = "Yuuki Asuna is the main character and partner of Kirito. She was a sub-leader in the Knights of the Blood guild in Old Aincrad. She is the daughter of the executive director of the RECTO company, which owned Alfheim Online.",
                 weight = 54
             };
-            TextService connectedTextFile = new TextService();
-            TextFile finalTextFile = connectedTextFile.ConnectedTextFile(misatoFile, asunaFile);
+            TextFile finalTextFile = textService.ConnectedTextFile(misatoFile, asunaFile);
             Console.WriteLine(finalTextFile.name);
             Console.WriteLine(finalTextFile.description);
             Console.WriteLine(finalTextFile.weight);
             //Quest20
-            TextService deletedTextFile = new TextService();
-            deletedTextFile.DeletedTextFile(misatoFile);
+            textService.ClearTextFile(misatoFile);
+            Console.WriteLine(misatoFile.name);
+            Console.WriteLine(misatoFile.description);
+            Console.WriteLine(misatoFile.weight);
             //Quest21
             string meow = "Мяв.";
-            TextService addedText = new TextService();
-            addedText.AddedTextFile(asunaFile, meow);
+            textService.AddedTextFile(asunaFile, meow);
+            Console.WriteLine(asunaFile.name);
+            Console.WriteLine(asunaFile.description);
+            Console.WriteLine(asunaFile.weight);
         }
     }
 }

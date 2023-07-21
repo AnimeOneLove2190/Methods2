@@ -50,13 +50,11 @@ namespace Project01
             return result;
         }
         //Quest10
-        public string Swap(ref int numberOne, ref int numberTwo)
+        public void Swap(ref int numberOne, ref int numberTwo)
         {
             int numberIntermediate = numberOne;
             numberOne = numberTwo;
             numberTwo = numberIntermediate;
-            string result = $"{numberOne} {numberTwo}";
-            return result;
         }
         //Quest11
         public int GetMaxNumberOfTwo(int numOne, int numTwo)
@@ -86,22 +84,22 @@ namespace Project01
         public int PerformOperation(int numberOne, int numberTwo, Operation operation)
         {
             int resultFin = 0;
-            if (operation == (Operation)1)
+            if (operation == Operation.addition)
             {
                 int resultInt = numberOne + numberTwo;
                 resultFin = resultInt;
             }
-            if (operation == (Operation)2)
+            if (operation == Operation.multiplication)
             {
                 int resultInt = numberOne * numberTwo;
                 resultFin = resultInt;
             }
-            if (operation == (Operation)3)
+            if (operation == Operation.division)
             {
                 int resultInt = numberOne / numberTwo;
                 resultFin = resultInt;
             }
-            if (operation == (Operation)4)
+            if (operation == Operation.difference)
             {
                 int resultInt = numberOne - numberTwo;
                 resultFin = resultInt;
